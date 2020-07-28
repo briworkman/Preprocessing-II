@@ -1,1 +1,55 @@
 // Mixins in here
+.custom-layout(@justify, @align) {
+  display: flex;
+  justify-content: @justify;
+  align-items: @align;
+}
+
+.custom-btn(@bgcolor:@button-bg, @width:100%, @font-color:@white) {
+  display: inline-block;
+  text-align: center;
+  padding: 11px;
+  background-color: @bgcolor;
+  cursor: pointer;
+  width: @width;
+  height: 45px;
+  font-size: 2rem;
+  border-radius: 10px;
+  color: @font-color;
+
+  &:hover {
+    background-color: @font-color;
+    color: @bgcolor;
+  }
+}
+
+//animation-duration: 3s;
+//animation-name: slidein;
+
+.slidein() {
+  @keyframes slidein {
+    from {
+      margin-left: 100%;
+    }
+
+    to {
+      margin-left: 0%;
+    }
+  }
+}
+
+//animation-name: fadeInOpacity;
+//animation-iteration-count: 1;
+//animation-timing-function: ease-in;
+//animation-duration: 2s;
+
+.fadein() {
+  @keyframes fadeInOpacity {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}
